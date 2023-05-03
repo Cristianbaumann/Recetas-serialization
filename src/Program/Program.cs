@@ -10,7 +10,7 @@ using System.Linq;
 
 namespace Recipies
 {
-    public class Program
+    public class Program 
     {
         private static ArrayList productCatalog = new ArrayList();
 

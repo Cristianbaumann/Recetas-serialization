@@ -19,6 +19,21 @@ namespace Recipies
         [JsonInclude]
         public ArrayList Steps { get; private set; } = new ArrayList();
 
+         public void LoadFromJson(string json)
+        {
+            Recipe deserialized = JsonSerializer.Deserialize<Recipe>(json);
+            this.FinalProduct = deserialized.FinalProduct;
+            this.Steps = deserialized.Steps;        
+
+        }
+
+         public string ConvertToJson()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+
+
+
 
         public void AddStep(Step step)
         {

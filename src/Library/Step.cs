@@ -25,6 +25,21 @@ namespace Recipies
             this.LoadFromJson(json);
         }
 
+        public void LoadFromJson(string json)
+        {
+            Step deserialized = JsonSerializer.Deserialize<Step>(json);
+            this.Quantity = deserialized.Quantity;
+            this.Input = deserialized.Input;  
+            this.Time = deserialized.Time;
+            this.Equipment = deserialized.Equipment;   
+
+        }
+
+         public string ConvertToJson()
+        {
+            return JsonSerializer.Serialize(this);
+        }
+
         public Product Input { get; set; }
 
         public double Quantity { get; set; }
